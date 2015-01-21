@@ -1,3 +1,8 @@
+/*
+	@author	 : Aseem Rastogi
+	@college :	National Institute Of Technology, Hamirpur
+*/
+
 #include <iostream>
 using namespace std;
 
