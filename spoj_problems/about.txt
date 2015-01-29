@@ -1,1 +1,1 @@
-This is my list of spoj problem that i have solved. one can see the questions on the spoj site :
+This is my list of spoj problem that i have solved. one can see the questions on the spoj site : http://www.spoj.com/problems/classical/sort=-6
