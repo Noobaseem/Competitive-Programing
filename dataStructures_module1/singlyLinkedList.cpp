@@ -32,7 +32,7 @@
  		void display();
  		//Constructor function
  		single_llist() {
- 			start = null;
+ 			start = NULL;
  		}
  };
 
