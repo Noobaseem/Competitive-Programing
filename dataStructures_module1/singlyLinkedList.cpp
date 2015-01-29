@@ -50,4 +50,37 @@
  	}
  }
 
+ /*Inserting a node in the begining*/
+ void single_llist::insert_begin() {
+ 	int value;
+ 	cout<<"Enter the valuee to be inserted : ";
+ 	cin>>value;
+ 	struct node* temp, *p;
+ 	temp = create_node(value);
+ 	if( start == NULL ) }{
+ 		start = temp;
+ 		start->next = NULL;
+ 	}else {
+ 		p = start;
+ 		start = temp;
+ 		start->next = p;
+ 	}
+ }
+
+ /*Inserting a node at last*/
+ void single_llist::insert_last() {
+ 	int value;
+ 	cout<<"Enter the value to be inserted : ";
+ 	cin>>value;
+ 	struct node* temp, *s;
+ 	temp = create_node(value);
+ 	s = start;
+ 	while( s->next != NULL ) {
+ 		s = s->next;
+ 	}
+ 	temp->next = NULL;
+ 	s->next = temp;
+ 	cout<<"Element inserted at last"<<endl;
+ }
+
  //TODO:WRITE REMAINING FUNCTIONS AND MAIN FUNCTION
