@@ -44,8 +44,8 @@ int main(int argc, char* argv[]){
 		char inputCopy[100005];
 		strcpy(inputCopy, input);
 		char next, nextRev, expected, expectedRev;
-		int length 		= strlen(input);
-		int counter		= 0;
+		int length 	= strlen(input);
+		int counter	= 0;
 		int switches = 0, switchesRev = 0;
 		while(length--){
 			expected 	= expectedChar(input[counter]);
@@ -54,8 +54,8 @@ int main(int argc, char* argv[]){
 				break;
 			}
 			if(counter <= strlen(input)-2){
-				next 		= input[counter+1];
-				nextRev 	= inputCopy[length-2];
+				next 	= input[counter+1];
+				nextRev = inputCopy[length-2];
 				
 				if(next == expected){
 					//do nothing
