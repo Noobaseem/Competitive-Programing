@@ -33,33 +33,33 @@ using namespace std;
 typedef map<int, int>  mii;
 typedef pair<int, int> pii;
 
-typedef struct  indexVal{
+struct  indexVal{
 	int index;
 	int value;
 };
 
 int myComaparator(const void* a, const void* b){
-	int l = (indexVal *) a->index;
-	int r = (indexVal *) b->index;
+	int l = ((struct indexVal *) a)->index;
+	int r = ((struct indexVal *) b)->index;
 	return l-r;
 }
 
 int main(int argc, char* argv[]){
-	indexVal arrayBasedOnIndex[5];
+	struct indexVal arrayBasedOnIndex[5];
 	//Create Array
 	arrayBasedOnIndex[0].index = 3;
 	arrayBasedOnIndex[0].value = 7;
-	arrayBasedOnIndex[0].index = 2;
-	arrayBasedOnIndex[0].value = 9;
-	arrayBasedOnIndex[0].index = 7;
-	arrayBasedOnIndex[0].value = 4;
-	arrayBasedOnIndex[0].index = 1;
-	arrayBasedOnIndex[0].value = 5;
-	arrayBasedOnIndex[0].index = 8;
-	arrayBasedOnIndex[0].value = 1;
-	qsort(arrayBasedOnIndex, 5, myComparator);
+	arrayBasedOnIndex[1].index = 2;
+	arrayBasedOnIndex[1].value = 9;
+	arrayBasedOnIndex[2].index = 7;
+	arrayBasedOnIndex[2].value = 4;
+	arrayBasedOnIndex[3].index = 1;
+	arrayBasedOnIndex[3].value = 5;
+	arrayBasedOnIndex[4].index = 8;
+	arrayBasedOnIndex[4].value = 1;
+	qsort(arrayBasedOnIndex, 5, sizeof(arrayBasedOnIndex[0]), myComaparator);
 	for(int i = 0; i < 5; i++){
-		arrayBasedOnIndex[i].value<<" ";
+		cout<<arrayBasedOnIndex[i].value<<" ";
 	}
 	return 0;
 }
