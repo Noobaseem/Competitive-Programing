@@ -19,7 +19,7 @@ using namespace std;
 char X[1024];
 char Y[1024];
 
-char dp[1024][1024];
+int dp[1024][1024];
 
 int max(int a, int b) {
 	return (a > b) ? a : b;
