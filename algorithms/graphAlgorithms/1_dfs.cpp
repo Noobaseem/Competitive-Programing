@@ -61,6 +61,8 @@ int main(int argc, char* argv[]){
     	dfs_status.pb(unvisited);
     }
 
+    adjcList.resize(N);
+
     adjcList[0].pb(make_pair(1,0));
     adjcList[0].pb(make_pair(2,0));
     adjcList[1].pb(make_pair(0,0));
