@@ -43,7 +43,7 @@ typedef pair<int,int> pii;
 typedef vector<pii> vii;
 typedef vector<vii> vvii;
 
-vvii adjcList;
+vvii adjcList(5);
 
 /*Declaring useful constants*/
 #define unvisited -1
@@ -59,20 +59,13 @@ int main(int argc, char* argv[]){
     si(N);
     for0(i,N){
     	dfs_status.pb(unvisited);
-    	cout<<dfs_status[i]<<" ";
-    }
-    
-    /*Defining the size of the adjacency List as per the number of vertices*/
-    adjcList[N];
-    for0(i,N){
-    	adjcList.pb(NULL);
     }
 
-    /*adjcList[0].pb(make_pair(1,0));
+    adjcList[0].pb(make_pair(1,0));
     adjcList[0].pb(make_pair(2,0));
     adjcList[1].pb(make_pair(0,0));
     adjcList[2].pb(make_pair(0,0));
     adjcList[3].pb(make_pair(4,0));
     adjcList[3].pb(make_pair(2,0));
-    adjcList[4].pb(make_pair(3,0));*/
+    adjcList[4].pb(make_pair(3,0));
 }
