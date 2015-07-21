@@ -31,13 +31,13 @@ typedef vector<int> vi;
 
 /*Important declarations for the disjoin-union sets*/
 
-typedef struct ancestor{
+struct ancestor{
     int p;
     int e;
 };
 
 int weight[1000];
-ancestor parent[1000];
+struct ancestor parent[1000];
 
 int parentComparator(const void* a, const void* b){
     int l = ((struct ancestor *) a)->p;
@@ -49,8 +49,8 @@ void makeset(int size) {
     int abCost = 0;
     for0(i,size){
         cin>>abCost;
-        parent[i]->p = i;
-        parent[i]->e = abCost;
+        parent[i].p = i;
+        parent[i].e = abCost;
         weight[i] = 1;
     }
 }
@@ -60,13 +60,13 @@ int qFind(int item){
     int newItem = item;
     int root    = item;
     /*Check if we have reached the root*/
-    while(root != parent[root]->p){
-        root = parent[root]->p;
+    while(root != parent[root].p){
+        root = parent[root].p;
     }
     /*Apply path compression so that all child nodes point to the parent node*/
     while(item != root){
-        newItem      = parent[item]->p;
-        parent[item]->p = root;
+        newItem      = parent[item].p;
+        parent[item].p = root;
         item         = newItem; 
     }
     return root;
@@ -81,10 +81,10 @@ void qUnion(int item1, int item2, int & count){
     if(l == r) return;
     /*Compare the weights of the roots nodes, make smaller root point to bigger root*/
     if(weight[l] < weight[r]){
-        parent[l]->p = r;
+        parent[l].p = r;
         weight[r] += weight[l];
     }else{
-        parent[r]->p = l;
+        parent[r].p = l;
         weight[l] += weight[r];
     }
     count--;
@@ -104,23 +104,25 @@ int main(int argc, char* argv[]){
         cin>>x>>y;
         qUnion(x-1,y-1,count);
     }
-    qsort(parent, temp, ARRAY_SIZE(parent), parentComparator);
+    qsort(parent, temp, sizeof(parent[0]), parentComparator);
     int cost = 1;
-    int count = 1;
+    int count1 = 1;
     int value = -1;
+    int min = 1005;
     for0(i,temp){
-        if(value != parent[i]->p){
-            cost *= count;
-            min = parent[i]->e;
-            value = parent[i]->p;
-            count = 1;
+        if(value != parent[i].p){
+            cost = (cost*count1)%MOD;
+            min = parent[i].e;
+            value = parent[i].p;
+            count1 = 1;
         }else{
-            if(parent[i]->e == min){
-                count++;
-            }else if(parent[i]->e < min){
-                count = 1;
-                min = parent[i]->e;
+            if(parent[i].e == min){
+                count1++;
+            }else if(parent[i].e < min){
+                count1 = 1;
+                min = parent[i].e;
             }
         }
     }
+    cout<<cost;
 }
