@@ -136,9 +136,9 @@ void BST::find(int item, node **par, node **loc)
         ptrsave = ptr;
         if (item < ptr->info)
             ptr = ptr->left;
-	else
-	    ptr = ptr->right;
-    }
+    	else
+    	    ptr = ptr->right;
+        }
     *loc = NULL;
     *par = ptrsave;
 }
