@@ -58,7 +58,7 @@ vi dfs_status;
     Let's say it represents each vertex which is neighbour of u, since neightbours
     of u are stored in the corresponding adjacency list of u thus we iterate over it.
 */
-#define trAdj(c,it) (vvii::iterator it = c.begin(); it! = c.end(); it++)
+#define trAdj(c,it) for(vii::iterator it = c.begin(); it != c.end(); it++)
 
 /*This is the dfs stack which is maintained internally*/
 void dfs(int u){
@@ -66,7 +66,7 @@ void dfs(int u){
     /*try all neighbours 'v' of vertex 'u'*/
     trAdj(adjcList[u], v){
         /*Additional checks to prevent the loops*/
-        if(dfs_status[v] == unvisited){
+        if(dfs_status[v->first] == unvisited){
             dfs(v->first);
         }
     }
@@ -74,25 +74,26 @@ void dfs(int u){
 
 int main(int argc, char* argv[]){
     /*Enter the number of vertices in the graph*/
-    int N;
-    si(N);
-    for0(i,N){
+    /*int N;
+    si(N);*/
+    for0(i,5){
         dfs_status.pb(unvisited);
     }
 
-    adjcList.resize(N);
+    adjcList.resize(5);
 
     /*Sample initialization*/
     adjcList[0].pb(make_pair(1,0));
     adjcList[0].pb(make_pair(2,0));
     adjcList[1].pb(make_pair(0,0));
     adjcList[2].pb(make_pair(0,0));
+    adjcList[2].pb(make_pair(3,0));
     adjcList[3].pb(make_pair(4,0));
     adjcList[3].pb(make_pair(2,0));
     adjcList[4].pb(make_pair(3,0));
 
     /*The loop is necessary to make sure that all disjoint components are being traversed*/
-    for0(i,N){
+    for0(i,5){
         if(dfs_status[i] == unvisited){
             dfs(i);
         }
