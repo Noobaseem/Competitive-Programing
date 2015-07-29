@@ -51,18 +51,18 @@ void dfsEdges(int u){
     dfs_status[u] = DFS_GRAY;
     trAdj(adjcList[u],v){
         /*From gray vertex to white vertex i.e it is a tree edge*/
-        if(dfs_status[v->first] = DFS_WHITE){
-            printf("There is a tree edge from %d -> %d",u,v->first);
+        if(dfs_status[v->first] == DFS_WHITE){
+            printf("There is a tree edge from %d -> %d\n",u,v->first);
             dfs_parent[v->first] = u;
             dfsEdges(v->first);
         }else if(dfs_status[v->first] == DFS_GRAY){
             if(v->first == dfs_parent[u]){
-                printf("Bidirectional edge from %d -> %d",u, v->first);
+                printf("Bidirectional edge from %d -> %d\n",u, v->first);
             }else{
                 printf("backward edge from %d -> %d",u,v->first);
             }
         }else if(dfs_status[v->first] == DFS_BLACK){
-            printf("There is a forward edge from %d -> %d",u,v->first);
+            printf("There is a forward edge from %d -> %d\n",u,v->first);
         }
     }
     /*Finally when the node is fully traversed then mark it as black*/
