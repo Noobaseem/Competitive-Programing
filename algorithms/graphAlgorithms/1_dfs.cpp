@@ -74,25 +74,26 @@ void dfs(int u){
 
 int main(int argc, char* argv[]){
     /*Enter the number of vertices in the graph*/
-    int N;
-    si(N);
-    for0(i,N){
+    /*int N;
+    si(N);*/
+    for0(i,5){
         dfs_status.pb(unvisited);
     }
 
-    adjcList.resize(N);
+    adjcList.resize(5);
 
     /*Sample initialization*/
     adjcList[0].pb(make_pair(1,0));
     adjcList[0].pb(make_pair(2,0));
     adjcList[1].pb(make_pair(0,0));
     adjcList[2].pb(make_pair(0,0));
+    adjcList[2].pb(make_pair(3,0));
     adjcList[3].pb(make_pair(4,0));
     adjcList[3].pb(make_pair(2,0));
     adjcList[4].pb(make_pair(3,0));
 
     /*The loop is necessary to make sure that all disjoint components are being traversed*/
-    for0(i,N){
+    for0(i,5){
         if(dfs_status[i] == unvisited){
             dfs(i);
         }
