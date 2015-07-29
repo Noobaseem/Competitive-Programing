@@ -58,7 +58,7 @@ vi dfs_status;
     Let's say it represents each vertex which is neighbour of u, since neightbours
     of u are stored in the corresponding adjacency list of u thus we iterate over it.
 */
-#define trAdj(c,it) (vvii::iterator it = c.begin(); it! = c.end(); it++)
+#define trAdj(c,it) for(vii::iterator it = c.begin(); it != c.end(); it++)
 
 /*This is the dfs stack which is maintained internally*/
 void dfs(int u){
@@ -66,7 +66,7 @@ void dfs(int u){
     /*try all neighbours 'v' of vertex 'u'*/
     trAdj(adjcList[u], v){
         /*Additional checks to prevent the loops*/
-        if(dfs_status[v] == unvisited){
+        if(dfs_status[v->first] == unvisited){
             dfs(v->first);
         }
     }
