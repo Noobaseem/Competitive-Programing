@@ -8,6 +8,6 @@ package in.logikx.datastructures;
  */
 public class BinaryTreeNode<E> {
 	E value = null;
-	BinaryTreeNode left = null;
-	BinaryTreeNode right = null;
+	BinaryTreeNode<E> left = null;
+	BinaryTreeNode<E> right = null;
 }

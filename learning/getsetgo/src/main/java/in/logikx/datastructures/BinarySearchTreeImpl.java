@@ -1,10 +1,34 @@
 package in.logikx.datastructures;
 
-public class BinarySearchTreeImpl<E> implements BinarySearchTree<E> {
+import java.util.Comparator;
+/**
+ * This is the concrete implementation of the BinarySearchTree.
+ * 
+ * @author aseem
+ *
+ * @param <E>
+ */
+public class BinarySearchTreeImpl<E extends Comparable<E>> implements BinarySearchTree<E>, Comparator<E> {
+	
+	//Initially the tree is empty and the root is pointing to null
+	BinaryTreeNode<E> root = null;
 
 	public void insert(E element) {
-		// TODO Auto-generated method stub
-		
+		BinaryTreeNode<E> temp = root;
+		//Check if the tree is empty
+		if(temp == null){
+			temp = new BinaryTreeNode<E>();
+			temp.value = element;
+		}else{
+			//element is smaller than root
+			if(compare(temp.value,element) == 1){
+				temp = temp.left;
+				insert(element);
+			}else{
+				temp = temp.right;
+				insert(element);
+			}
+		}		
 	}
 
 	public void delete(E element) {
@@ -35,6 +59,10 @@ public class BinarySearchTreeImpl<E> implements BinarySearchTree<E> {
 	public int getMinElement(BinaryTreeNode<E> root) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	public int compare(E node1, E node2) {
+		return node1.compareTo(node2);
 	}
 
 }
