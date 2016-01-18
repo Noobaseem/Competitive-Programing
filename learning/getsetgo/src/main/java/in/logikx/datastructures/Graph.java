@@ -39,10 +39,10 @@ public abstract class Graph {
 	/**
 	 * 
 	 * @param source
-	 * @param targer
+	 * @param target
 	 * @param weight
 	 */
-	public abstract void addEdgeSafe(int source, int targer, int weight);
+	public abstract void addEdgeSafe(int source, int target, int weight);
 	
 	public abstract void addEdge(Edge e);
 	

@@ -11,6 +11,22 @@ public class AdjListElement {
 	public int target;
 	public int weight;
 	
+	public int getTarget() {
+		return target;
+	}
+
+	public void setTarget(int target) {
+		this.target = target;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+	
 	public AdjListElement(int target, int weight){
 		this.target = target;
 		this.weight = weight;
