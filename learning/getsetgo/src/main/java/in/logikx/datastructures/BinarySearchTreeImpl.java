@@ -30,7 +30,12 @@ public class BinarySearchTreeImpl<E extends Comparable<E>> implements BinarySear
 			}
 		}		
 	}
-
+	
+	public E find(E item, BinaryTreeNode<E> parent, BinaryTreeNode<E> location) {
+		
+		return null;
+	}
+	
 	public void delete(E element) {
 		// TODO Auto-generated method stub
 		

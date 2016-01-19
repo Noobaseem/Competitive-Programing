@@ -1,8 +1,16 @@
 package in.logikx.datastructures;
 
+/**
+ * 
+ * @author aseem
+ *
+ * @param <E>
+ */
 public interface BinarySearchTree<E> {
 	
 	public void insert(E element);
+	
+	public E find(E item, BinaryTreeNode<E> parent, BinaryTreeNode<E> location);
 	
 	public void delete(E element);
 	

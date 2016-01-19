@@ -1,5 +1,11 @@
 package in.logikx.datastructures;
 
+/**
+ * 
+ * @author aseem
+ *
+ * @param <E>
+ */
 public class BinaryTreeImpl<E> implements BinaryTree<E> {
 	
 	

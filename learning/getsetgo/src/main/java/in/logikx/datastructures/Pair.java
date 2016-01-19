@@ -28,15 +28,13 @@ public class Pair<L,R> {
 		return this.right;
 	}
 	
-	@Override
 	public int hashCode(){
 		return this.left.hashCode()^this.right.hashCode();
 	}
-	
-	@Override
+
 	public boolean equals(Object o){
 		if (!(o instanceof Pair)) return false;
-		Pair pair = (Pair) o;
+		Pair<?, ?> pair = (Pair<?, ?>) o;
 		return this.left.equals(pair.getLeft()) && this.right.equals(pair.getRight());
 	}
 }
