@@ -9,18 +9,32 @@ package in.logikx.datastructures;
 public interface BinarySearchTree<E> {
 	
 	public void insert(E element);
-	
-	public E find(E item, BinaryTreeNode<E> parent, BinaryTreeNode<E> location);
+
+	public void find(E item, BinaryTreeNode<E> location, BinaryTreeNode<E> parentLocation);
 	
 	public void delete(E element);
 	
+	public void deleteCaseA(BinaryTreeNode<E> location, BinaryTreeNode<E> parentLocation);
+	
+	public void deleteCaseB(BinaryTreeNode<E> location, BinaryTreeNode<E> parentLocation);
+	
+	public void deleteCaseC(BinaryTreeNode<E> location, BinaryTreeNode<E> parentLocation);
+	
+	public void inorderTraversal(BinaryTreeNode<E> currentNode);
+	
+	public void preOrderTraversal(BinaryTreeNode<E> currentNode);
+	
+	public void postOrderTraversal(BinaryTreeNode<E> currentNode);
+	
+	public void processCurrentNode(BinaryTreeNode<E> currentNode);
+	
 	public void getLCA(E element1, E element2);
 	
-	public int getHeight(BinaryTreeNode<E> root);
+	public int getHeight();
 	
-	public int getDiameter(BinaryTreeNode<E> root);
+	public int getDiameter();
 	
-	public int getMaxElement(BinaryTreeNode<E> root);
+	public int getMaxElement();
 	
-	public int getMinElement(BinaryTreeNode<E> root);
+	public int getMinElement();
 }
