@@ -1,2 +1,2 @@
-# This is my first Angular 2 project
-# I am trying to build the project from scratch
+# Hi My name is Aseem Rastogi
+# I am trying to build the angular2 project from scratch
